@@ -27,7 +27,7 @@
             <img src="./img/logo.png" alt="">
         </section>
         <section class="new-todo">
-            <input type="text" placeholder="Inserisci un nuovo Todo" v-model="newTodo" ref="inputTodo">
+            <input type="text" placeholder="Inserisci un nuovo Todo" v-model="newTodo" ref="inputTodo" @keyup.enter="addTodo">
             <button class="addButton" @click="addTodo">Aggiungi</button>
         </section>
 
