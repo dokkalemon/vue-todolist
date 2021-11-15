@@ -62,7 +62,8 @@ const app = new Vue({
                     completed: false
                 });
 
-                
+                //pulire l'input
+                this.newTodo = ''
             }
         }
     },
