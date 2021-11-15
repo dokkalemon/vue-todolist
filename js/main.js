@@ -63,7 +63,10 @@ const app = new Vue({
                 });
 
                 //pulire l'input
-                this.newTodo = ''
+                this.newTodo = '';
+
+                //focus nell'input
+                this.$refs.inputTodo.focus()
             }
         }
     },
