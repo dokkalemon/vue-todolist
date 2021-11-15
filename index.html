@@ -27,17 +27,18 @@
             <img src="./img/logo.png" alt="">
         </section>
         <section class="new-todo">
-            <input type="text" placeholder="Inserisci un nuovo Todo" v-model="newTodo" ref="inputTodo" @keyup.enter="addTodo">
+            <input type="text" placeholder="Inserisci un nuovo Todo" v-model.trim="newTodo" ref="inputTodo" @keyup.enter="addTodo">
             <button class="addButton" @click="addTodo">Aggiungi</button>
         </section>
 
         <section class="todo-section">
-            <ul class="todo-list">
-                <li class="todo" v-for="todo in todos" :class="{complete: todo.completed}">
-                    <span class="text">{{todo.text}}</span>
-                    <i class="fas fa-trash-alt delete"></i>
+            <ul class="todo-list" v-if="todos.length > 0">
+                <li class="todo" v-for="(todo, index) in todos" :class="{complete: todo.completed}">
+                    <span class="text" @click="update(index)" >{{todo.text}}</span>
+                    <i class="fas fa-trash-alt delete" @click="removeTodo"></i>
                 </li>
             </ul>
+            <h3 v-else="">Bravo hai completato tutti i tuoi ToDo</h3>
         </section>
     </div>
 

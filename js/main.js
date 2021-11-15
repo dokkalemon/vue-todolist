@@ -37,6 +37,7 @@ impostare true e viceversa).
 const app = new Vue({
     el: '#app',
     data: {
+        //lista to do
         todos: [
             {
                 text: 'Fare la Spesa',
@@ -52,15 +53,19 @@ const app = new Vue({
             },
         ],
 
+        //testo dell'input
         newTodo: '',
     },
     methods: {
+
+        //aggiungiamo il nuovo to do
         addTodo() {
             if (this.newTodo !== '') {
                 this.todos.unshift({
                     text: this.newTodo,
                     completed: false
                 });
+                console.log(this.newTodo);
 
                 //pulire l'input
                 this.newTodo = '';
@@ -68,6 +73,21 @@ const app = new Vue({
                 //focus nell'input
                 this.$refs.inputTodo.focus()
             }
+        },
+
+        //cancelliamo il to do dalla lista
+        removeTodo(index) {
+            this.todos.splice(index, 1)
+        },
+
+        //se clicco il to do cambia la classe
+        update(index) {
+            if (this.todos[index].completed) {
+                this.todos[index].completed = false
+            } else {
+                this.todos[index].completed = true
+            }
+
         }
     },
 }) 
