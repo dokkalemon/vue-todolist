@@ -6,6 +6,112 @@
     box-sizing: border-box;
 }
 
+/* Utilities */
 body {
     font-family: 'Heebo', sans-serif;
+}
+
+.container {
+    width: 800px;
+    margin: 0 auto;
+}
+
+/* App Header */
+.app-header {
+    padding: 20px 0;
+    text-align: center;
+}
+
+.app-header img {
+    max-width: 150px;
+}
+
+/* New Todo */
+.new-todo {
+    display: flex;
+}
+
+.new-todo input {
+    flex-grow: 1;
+    height: 35px;
+    border: none;
+    border-bottom: 1px solid #aaa;
+    margin-right: 1.5rem;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.5s;
+}
+
+.new-todo input:hover,
+.new-todo input:focus {
+    border-bottom: 2px solid #000c38;
+}
+
+.new-todo button {
+    padding: 0 20px;
+    border: none;
+    background-color: #249f3f;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.5s;
+}
+
+.new-todo button:hover,
+.new-todo button:focus {
+    background-color: orange
+}
+
+.todo-section {
+    margin-top: 50px;
+}
+.todo-list {
+    background-color: #aaa;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.todo {
+    display: flex;
+    border-bottom: 1px solid #000c38;
+    position: relative;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+}
+
+.todo:last-child {
+    border: none;
+}
+
+.text {
+    flex-grow: 1;
+    margin-right: 1.5rem;
+    margin-left: 25px;
+    cursor: pointer;
+  
+    
+}
+
+.text:before {
+    content: '';
+    height: 15px;
+    width: 15px;
+    border: 1px solid black;
+    position: absolute;
+    top: 3px;
+    left: 0;
+    border-radius: 5px;
+}
+
+.delete:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.complete .text {
+    text-decoration: line-through;
+}
+
+.complete .text:before {
+    background-color: blue;
 }
